@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import Login from "./Login"; 
 import Registro from "./Registro";
 import React, { useState } from 'react';
@@ -16,18 +15,19 @@ function Principal() {
   };
 
   return (
-    <div style={{ textAlign: "center", padding: "20px" }}>
-      <h1>Bienvenido a Movetracker</h1>
-      <div>
+    <div className="container text-center mt-5">
+      <h1 className="mb-4">Bienvenido a Movetracker</h1>
+      <div className="card p-4 shadow">
       {mostrarRegistro ? (
         <div>
           <Registro />
-          <p>¿Ya tienes cuenta? <button onClick={ClickLogin}>Inicia sesión</button></p>
+          <p>¿Ya tienes cuenta? <button className="btn btn-primary" onClick={ClickLogin}>Inicia sesión</button></p>
         </div>
       ) : (
         <div>
           <Login />
-          <p>¿No tienes cuenta? <button onClick={ClickRegistro}>Regístrate</button></p>
+          <p>¿No tienes cuenta?</p><br />
+          <button className="btn btn-success" onClick={ClickRegistro}>Regístrate</button>
         </div>
       )}
     </div>
@@ -35,42 +35,4 @@ function Principal() {
   );
 }
 
-=======
-import Login from "./Login"; 
-import Registro from "./Registro";
-import React, { useState } from 'react';
-
-function Principal() {
-
-  const [mostrarRegistro, setMostrarRegistro] = useState(false);
-
-  const ClickRegistro = () => {
-    setMostrarRegistro(true);
-  };
-
-  const ClickLogin = () => {
-    setMostrarRegistro(false);
-  };
-
-  return (
-    <div style={{ textAlign: "center", padding: "20px" }}>
-      <h1>Bienvenido a Movetracker</h1>
-      <div>
-      {mostrarRegistro ? (
-        <div>
-          <Registro />
-          <p>¿Ya tienes cuenta? <button onClick={ClickLogin}>Inicia sesión</button></p>
-        </div>
-      ) : (
-        <div>
-          <Login />
-          <p>¿No tienes cuenta? <button onClick={ClickRegistro}>Regístrate</button></p>
-        </div>
-      )}
-    </div>
-    </div>
-  );
-}
-
->>>>>>> 9d73a78 (Primer commit - OblihatorioFrontEnd)
 export default Principal;
